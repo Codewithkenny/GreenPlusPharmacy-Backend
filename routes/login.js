@@ -1,6 +1,6 @@
 const express = require("express");
 const { body } = require("express-validator");
-const  loginUser  = require("../controller/loginUser"); // Import the loginUser controller function
+const  login  = require("../controller/login"); 
 const router = express.Router();
 
 // Validation middleware for login
@@ -10,6 +10,6 @@ const validateLogin = [
 ];
 
 // Login route
-router.post("/", validateLogin, loginUser);
+router.post("/", validateLogin, login);
 
 module.exports = router;

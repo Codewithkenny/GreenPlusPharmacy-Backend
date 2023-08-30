@@ -58,7 +58,7 @@ router.get("/", async (req, res) => {
 });
 
 
-//GET PRODUCT
+//GET A SINGLE PRODUCT 
 
 router.get("/find/:id", async (req, res) => {
   try {

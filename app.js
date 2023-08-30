@@ -10,6 +10,7 @@ const orders = require("./routes/orders");
 const productsRoute = require("./routes/products");
 const Products = require("./model/products");
 const featuredProductsRoute = require("./routes/featuredProducts");
+const productDetailsRoute = require("./routes/productDetails");
 
 
 
@@ -56,7 +57,10 @@ app.use("/api/login", login);
 app.use("/api/logout", logout);
 app.use("/api/orders", orders);
 app.use("/api/products", productsRoute);
-app.use("/api/featured-products", featuredProductsRoute);
+app.use("/api", featuredProductsRoute);
+app.use("/api/products/product-details", productDetailsRoute);
+
+
 
 
 
