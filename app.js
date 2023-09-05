@@ -11,12 +11,20 @@ const productsRoute = require("./routes/products");
 const Products = require("./model/products");
 const featuredProductsRoute = require("./routes/featuredProducts");
 const productDetailsRoute = require("./routes/productDetails");
+const paymentRoute = require("./routes/payment");
 
 
 
 const port = process.env.PORT || 5000;
 
 require("dotenv").config();
+
+const secretKey = process.env.SECRET_KEY;
+
+if (!secretKey) {
+  throw new Error("SECRET_KEY environment variable is not set.");
+}
+
 
 // Middlewares
 app.use(bodyParser.json());
@@ -59,6 +67,7 @@ app.use("/api/orders", orders);
 app.use("/api/products", productsRoute);
 app.use("/api", featuredProductsRoute);
 app.use("/api/products/product-details", productDetailsRoute);
+app.use("/api/payment", paymentRoute);
 
 
 
